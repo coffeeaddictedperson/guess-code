@@ -1,4 +1,5 @@
 export function validateNumber (checkedValue, code_len) {
+  console.log(checkedValue)
   // show error, etc
   // todo: fix regexp if code_len != 4 or no digits only
   if(checkedValue.length !== code_len || !(/^\d{4}$/.test(checkedValue))) {
@@ -16,13 +17,15 @@ export function validateNumber (checkedValue, code_len) {
   return error;
 }
 
+// testValue = array
+// value string or number
+
 export function getResult(testValue, value) {
   const result = {
     checkedValue: testValue,
     countCow: 0,
     countBull: 0
   };
-  testValue = testValue.toString();
   value = value.toString();
 
   for (let i = 0; i < testValue.length; i++) {

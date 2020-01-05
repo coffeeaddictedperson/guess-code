@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   const CODE_LEN = 4;
-  const [codeValue, setCodeValue] = useState('0369');
+  const [codeValue, setCodeValue] = useState('0124');
   const [userError, setUserError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [iterations, setIterations] = useState([]);
@@ -15,7 +15,7 @@ function App() {
     let result = [];
 
     if(!error) {
-      result = guesser(checkedValue, codeValue);
+      result = guesser(checkedValue, codeValue, CODE_LEN);
       const lastIndex = result.length - 1;
       console.log('______________________', result)
       if(result[lastIndex].countBull === CODE_LEN  || result[lastIndex].tempCow === CODE_LEN ) {
